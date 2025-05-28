@@ -18,6 +18,10 @@ public static class EnvUtils
         {
             return (TEnv)(object)int.Parse(env);
         }
+        if (typeof(TEnv) == typeof(bool))
+        {
+            return (TEnv)(object)bool.Parse(env);
+        }
         throw new NotSupportedException($"{typeof(TEnv)} is not supported");
     }
 }
